@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+ 
+  <fieldset style = "height: 600px;width:310px;">
+    <legend>SignUp </legend>
+    <form method="get" action="" enctype="" onsubmit="return validateForm()">
+      Name: <input type="text" name="name" id="name" placeholder="Type name"> <br>
+      <hr>
+      Email: <input type="email" name="email" id="email">
+        <button>ℹ️</button>
+      </div><br>
+      <hr>
+      Username: <input type="text" name="username" id="username" placeholder="Type username"> <br>
+      <hr>
+      Password: <input type="password" name="password" id="password"> <br>
+      <hr>
+      Confirm Password: <input type="password" name="confirmPassword" id="confirmPassword"> <br>
+      <hr>
+      Profile Picture: <input type="file" name="profilePic" id="profilePic"> <br><br>
+      <fieldset>
+      Blood Group: 
+      <select name="bloodGroup" id="bloodGroup">
+        <option value="">Select</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select> <br><br>
+    </fieldset>
+      <fieldset>
+        <legend>Gender</legend>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other <br>
+      </fieldset>
+      <hr>
+      <fieldset>
+        <legend>Date of Birth</legend>
+        <input type="text" class="date-input" id="day" length="2" placeholder="dd">
+        <span class="separator">/</span>
+        <input type="text" class="date-input" id="month" length="2" placeholder="mm">
+        <span class="separator">/</span>
+        <input type="text" class="date-input" id="year" length="4" placeholder="yyyy">
+        <sub>(dd/mm/yyyy)</sub>
+      </fieldset>
+      <hr>
+      <a href="loginadmin.php"></a> <input type="submit" name="button" value="Submit"/>
+      <input type="reset" name="button" value="Reset"/> <br>
+      
+    </form>
+  </fieldset>
+
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var username = document.getElementById("username").value.trim();
+      var password = document.getElementById("password").value.trim();
+      var confirmPassword = document.getElementById("confirmPassword").value.trim();
+      var bloodGroup = document.getElementById("bloodGroup").value;
+      var day = document.getElementById("day").value.trim();
+      var month = document.getElementById("month").value.trim();
+      var year = document.getElementById("year").value.trim();
+
+      if (name === "" || email === "" || username === "" || password === "" || confirmPassword === "" || day === "" || month === "" || year === "") {
+        alert("All fields must be filled out");
+        return false;
+      }
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+      }
+
+
+      return true;
+    }
+  </script>
+</body>
+</html>
